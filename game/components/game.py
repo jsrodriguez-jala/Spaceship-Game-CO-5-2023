@@ -22,6 +22,7 @@ class Game:
     def run(self):
         # Game loop: events - update - draw
         self.playing = True
+
         while self.playing:
             self.events()
             self.update()
@@ -53,7 +54,9 @@ class Game:
         image_height = image.get_height()
         self.screen.blit(image, (self.x_pos_bg, self.y_pos_bg))
         self.screen.blit(image, (self.x_pos_bg, self.y_pos_bg - image_height))
+
         if self.y_pos_bg >= SCREEN_HEIGHT:
             self.screen.blit(image, (self.x_pos_bg, self.y_pos_bg - image_height))
             self.y_pos_bg = 0
+            
         self.y_pos_bg += self.game_speed

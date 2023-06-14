@@ -16,10 +16,13 @@ class Spaceship:
     def update(self, user_input):
         if user_input[pygame.K_LEFT]:
             self.move_left()
+
         elif user_input[pygame.K_RIGHT]:
             self.move_right()
+
         elif user_input[pygame.K_UP]:
             self.move_up()
+
         elif user_input[pygame.K_DOWN]:
             self.move_down()
 
@@ -30,12 +33,14 @@ class Spaceship:
     def move_left(self):
         if self.rect.left > 0:
             self.rect.x -= 10
+
         elif self.rect.left <= 0:
             self.rect.x = SCREEN_WIDTH - self.rect.width
 
     def move_right(self):
         if self.rect.right < SCREEN_WIDTH:
             self.rect.x += 10
+            
         elif self.rect.right >= SCREEN_WIDTH:
             self.rect.x = 0
 
