@@ -12,6 +12,7 @@ class Spaceship:
         self.rect.x = self.X_POS
         self.rect.y = self.Y_POS
         self.direction = 1
+        self.is_alive = True
 
     def update(self, user_input):
         if user_input[pygame.K_LEFT]:
